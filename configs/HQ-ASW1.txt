@@ -1,0 +1,127 @@
+enable
+configure terminal
+hostname HQ-ASW1
+no ip domain-lookup
+service timestamps log datetime msec
+logging buffered 32768 informational
+ip domain-name enterprise.lab
+cdp run
+lldp run
+line console 0
+ logging synchronous
+ exec-timeout 30 0
+exit
+vtp mode transparent
+spanning-tree mode rapid-pvst
+vlan 10
+ name HR
+exit
+vlan 20
+ name FINANCE
+exit
+vlan 30
+ name IT
+exit
+vlan 40
+ name GUEST
+exit
+vlan 50
+ name SERVERS
+exit
+vlan 99
+ name MANAGEMENT
+exit
+vlan 999
+ name NATIVE_UNUSED
+exit
+spanning-tree vlan 10,20,30,40,50,99,999 priority 32768
+interface GigabitEthernet0/0
+ description TO_DSW1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,50,99,999
+ switchport nonegotiate
+ no shutdown
+exit
+interface GigabitEthernet0/1
+ description TO_DSW2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,50,99,999
+ switchport nonegotiate
+ no shutdown
+exit
+interface GigabitEthernet0/2
+ description HR_ENDPOINT
+ switchport mode access
+ switchport access vlan 10
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ no shutdown
+exit
+interface GigabitEthernet0/3
+ description FINANCE_ENDPOINT
+ switchport mode access
+ switchport access vlan 20
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ no shutdown
+exit
+interface GigabitEthernet1/0
+ description IT_ENDPOINT
+ switchport mode access
+ switchport access vlan 30
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ no shutdown
+exit
+interface GigabitEthernet1/1
+ description GUEST_ENDPOINT
+ switchport mode access
+ switchport access vlan 40
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ no shutdown
+exit
+interface GigabitEthernet1/2
+ description SERVERS_ENDPOINT
+ switchport mode access
+ switchport access vlan 50
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ no shutdown
+exit
+interface Vlan99
+ description SWITCH_MANAGEMENT
+ ip address 10.10.99.10 255.255.255.0
+ no shutdown
+exit
+ip default-gateway 10.10.99.1
+interface GigabitEthernet1/3
+ shutdown
+exit
+ntp server 10.255.0.1
+end
+write memory

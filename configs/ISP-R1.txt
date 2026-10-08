@@ -1,0 +1,48 @@
+enable
+configure terminal
+hostname ISP-R1
+no ip domain-lookup
+service timestamps log datetime msec
+logging buffered 32768 informational
+ip domain-name enterprise.lab
+cdp run
+lldp run
+line console 0
+ logging synchronous
+ exec-timeout 30 0
+exit
+interface Loopback0
+ description ROUTER_ID
+ ip address 10.255.0.3 255.255.255.255
+ no shutdown
+exit
+interface GigabitEthernet0/0
+ description TO_HQ
+ ip address 10.254.0.2 255.255.255.252
+ no shutdown
+exit
+interface GigabitEthernet0/1
+ description TO_BRANCH
+ ip address 10.254.0.6 255.255.255.252
+ no shutdown
+exit
+interface GigabitEthernet0/2
+ description SIMULATED_EXTERNAL
+ ip address 203.0.113.1 255.255.255.0
+ no shutdown
+exit
+router ospf 10
+ router-id 10.255.0.3
+ passive-interface default
+ no passive-interface GigabitEthernet0/0
+ no passive-interface GigabitEthernet0/1
+ network 10.255.0.3 0.0.0.0 area 0
+ network 10.254.0.0 0.0.0.3 area 0
+ network 10.254.0.4 0.0.0.3 area 0
+exit
+router ospf 10
+ default-information originate always
+exit
+ntp master 5
+end
+write memory

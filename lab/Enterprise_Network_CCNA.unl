@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<lab name="Enterprise_Network_CCNA" version="1" scripttimeout="300" lock="0">
+  <description>Utsav Chopda | Isolated enterprise lab | 6 x 1024 MB network nodes | Apply supplied console configs after import. No external clouds.</description>
+  <topology>
+    <nodes>
+      <node id="1" name="HQ-R1" type="qemu" template="vios" image="vios-adventerprisek9-m-15.6.2T" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="4" uuid="11c1af53-cd8f-4bd6-be88-0e62e3f28635" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="400" top="190">
+        <interface id="0" name="Gi0/0" type="ethernet" network_id="1" />
+        <interface id="1" name="Gi0/1" type="ethernet" network_id="4" />
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="5" />
+      </node>
+      <node id="2" name="BR-R1" type="qemu" template="vios" image="vios-adventerprisek9-m-15.6.2T" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="4" uuid="c3d32e97-6196-4ef1-9288-8606129ee14c" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="960" top="190">
+        <interface id="0" name="Gi0/0" type="ethernet" network_id="2" />
+        <interface id="1" name="Gi0/1" type="ethernet" network_id="10" />
+      </node>
+      <node id="3" name="ISP-R1" type="qemu" template="vios" image="vios-adventerprisek9-m-15.6.2T" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="4" uuid="a43313a9-258b-481e-a336-ffd11f1813b1" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="690" top="65">
+        <interface id="0" name="Gi0/0" type="ethernet" network_id="1" />
+        <interface id="1" name="Gi0/1" type="ethernet" network_id="2" />
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="3" />
+      </node>
+      <node id="4" name="HQ-DSW1" type="qemu" template="viosl2" image="viosl2-adventerprisek9-m.ssa.high_iron_20200929" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="8" uuid="696171fa-92fd-4707-adac-2f838ff71bf2" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch-2D-L3-Generic-S.svg" config="0" left="230" top="340">
+        <interface id="0" name="Gi0/0" type="ethernet" network_id="4" />
+        <interface id="1" name="Gi0/1" type="ethernet" network_id="6" />
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="7" />
+        <interface id="3" name="Gi0/3" type="ethernet" network_id="8" />
+      </node>
+      <node id="5" name="HQ-DSW2" type="qemu" template="viosl2" image="viosl2-adventerprisek9-m.ssa.high_iron_20200929" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="8" uuid="09967811-bb30-43bc-8e0b-616f9872d7b6" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch-2D-L3-Generic-S.svg" config="0" left="550" top="340">
+        <interface id="0" name="Gi0/0" type="ethernet" network_id="5" />
+        <interface id="1" name="Gi0/1" type="ethernet" network_id="6" />
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="7" />
+        <interface id="3" name="Gi0/3" type="ethernet" network_id="9" />
+      </node>
+      <node id="6" name="HQ-ASW1" type="qemu" template="viosl2" image="viosl2-adventerprisek9-m.ssa.high_iron_20200929" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="8" uuid="a7d70a1e-e00e-4be8-b00a-0fcbde44cb20" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch-2D-L3-Generic-S.svg" config="0" left="390" top="530">
+        <interface id="0" name="Gi0/0" type="ethernet" network_id="8" />
+        <interface id="1" name="Gi0/1" type="ethernet" network_id="9" />
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="11" />
+        <interface id="3" name="Gi0/3" type="ethernet" network_id="12" />
+        <interface id="4" name="Gi1/0" type="ethernet" network_id="13" />
+        <interface id="5" name="Gi1/1" type="ethernet" network_id="14" />
+        <interface id="6" name="Gi1/2" type="ethernet" network_id="15" />
+      </node>
+      <node id="7" name="HR-PC" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="80" top="700">
+        <interface id="0" name="eth0" type="ethernet" network_id="11" />
+      </node>
+      <node id="8" name="FIN-PC" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="235" top="700">
+        <interface id="0" name="eth0" type="ethernet" network_id="12" />
+      </node>
+      <node id="9" name="IT-PC" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="390" top="700">
+        <interface id="0" name="eth0" type="ethernet" network_id="13" />
+      </node>
+      <node id="10" name="GUEST-PC" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="545" top="700">
+        <interface id="0" name="eth0" type="ethernet" network_id="14" />
+      </node>
+      <node id="11" name="SERVER-PC" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="700" top="700">
+        <interface id="0" name="eth0" type="ethernet" network_id="15" />
+      </node>
+      <node id="12" name="BR-PC" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="960" top="380">
+        <interface id="0" name="eth0" type="ethernet" network_id="10" />
+      </node>
+      <node id="13" name="EXT-PC" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="1010" top="65">
+        <interface id="0" name="eth0" type="ethernet" network_id="3" />
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="HQ-R1--ISP-R1-1" left="0" top="0" visibility="0" />
+      <network id="2" type="bridge" name="BR-R1--ISP-R1-2" left="0" top="0" visibility="0" />
+      <network id="3" type="bridge" name="ISP-R1--EXT-PC-3" left="0" top="0" visibility="0" />
+      <network id="4" type="bridge" name="HQ-R1--HQ-DSW1-4" left="0" top="0" visibility="0" />
+      <network id="5" type="bridge" name="HQ-R1--HQ-DSW2-5" left="0" top="0" visibility="0" />
+      <network id="6" type="bridge" name="HQ-DSW1--HQ-DSW2-6" left="0" top="0" visibility="0" />
+      <network id="7" type="bridge" name="HQ-DSW1--HQ-DSW2-7" left="0" top="0" visibility="0" />
+      <network id="8" type="bridge" name="HQ-DSW1--HQ-ASW1-8" left="0" top="0" visibility="0" />
+      <network id="9" type="bridge" name="HQ-DSW2--HQ-ASW1-9" left="0" top="0" visibility="0" />
+      <network id="10" type="bridge" name="BR-R1--BR-PC-10" left="0" top="0" visibility="0" />
+      <network id="11" type="bridge" name="HQ-ASW1--HR-PC-11" left="0" top="0" visibility="0" />
+      <network id="12" type="bridge" name="HQ-ASW1--FIN-PC-12" left="0" top="0" visibility="0" />
+      <network id="13" type="bridge" name="HQ-ASW1--IT-PC-13" left="0" top="0" visibility="0" />
+      <network id="14" type="bridge" name="HQ-ASW1--GUEST-PC-14" left="0" top="0" visibility="0" />
+      <network id="15" type="bridge" name="HQ-ASW1--SERVER-PC-15" left="0" top="0" visibility="0" />
+    </networks>
+  </topology>
+</lab>

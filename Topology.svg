@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="900" viewBox="0 0 1250 900">
+<rect width="1250" height="900" fill="#FFFFFF"/>
+<style>text{font-family:Arial,sans-serif;fill:#172B45} .label{font-size:14px;font-weight:bold} .small{font-size:11px;fill:#465970}</style>
+<text x="40" y="35" font-size="24" font-weight="bold">Headquarters and branch topology</text>
+<text x="40" y="58" class="small">Bengaluru headquarters | Pune branch | Isolated provider simulation</text>
+<line x1="455" y1="255" x2="745" y2="130" stroke="#526f94" stroke-width="2"/>
+<line x1="455" y1="255" x2="285" y2="405" stroke="#526f94" stroke-width="2"/>
+<line x1="455" y1="255" x2="605" y2="405" stroke="#526f94" stroke-width="2"/>
+<line x1="1015" y1="255" x2="745" y2="130" stroke="#526f94" stroke-width="2"/>
+<line x1="1015" y1="255" x2="1015" y2="445" stroke="#526f94" stroke-width="2"/>
+<line x1="745" y1="130" x2="1065" y2="130" stroke="#526f94" stroke-width="2"/>
+<line x1="285" y1="396" x2="605" y2="396" stroke="#526f94" stroke-width="2"/>
+<line x1="285" y1="414" x2="605" y2="414" stroke="#526f94" stroke-width="2"/>
+<line x1="285" y1="405" x2="445" y2="595" stroke="#526f94" stroke-width="2"/>
+<line x1="605" y1="405" x2="445" y2="595" stroke="#526f94" stroke-width="2"/>
+<line x1="445" y1="595" x2="135" y2="765" stroke="#526f94" stroke-width="2"/>
+<line x1="445" y1="595" x2="290" y2="765" stroke="#526f94" stroke-width="2"/>
+<line x1="445" y1="595" x2="445" y2="765" stroke="#526f94" stroke-width="2"/>
+<line x1="445" y1="595" x2="600" y2="765" stroke="#526f94" stroke-width="2"/>
+<line x1="445" y1="595" x2="755" y2="765" stroke="#526f94" stroke-width="2"/>
+<rect x="400" y="232" width="112" height="48" rx="8" fill="#DFEAF4" stroke="#6B829C"/>
+<text x="456" y="252" text-anchor="middle" class="label">HQ-R1</text>
+<text x="456" y="268" text-anchor="middle" class="small">vios</text>
+<rect x="960" y="232" width="112" height="48" rx="8" fill="#DFEAF4" stroke="#6B829C"/>
+<text x="1016" y="252" text-anchor="middle" class="label">BR-R1</text>
+<text x="1016" y="268" text-anchor="middle" class="small">vios</text>
+<rect x="690" y="107" width="112" height="48" rx="8" fill="#DFEAF4" stroke="#6B829C"/>
+<text x="746" y="127" text-anchor="middle" class="label">ISP-R1</text>
+<text x="746" y="143" text-anchor="middle" class="small">vios</text>
+<rect x="230" y="382" width="112" height="48" rx="8" fill="#DFEAF4" stroke="#6B829C"/>
+<text x="286" y="402" text-anchor="middle" class="label">HQ-DSW1</text>
+<text x="286" y="418" text-anchor="middle" class="small">viosl2</text>
+<rect x="550" y="382" width="112" height="48" rx="8" fill="#DFEAF4" stroke="#6B829C"/>
+<text x="606" y="402" text-anchor="middle" class="label">HQ-DSW2</text>
+<text x="606" y="418" text-anchor="middle" class="small">viosl2</text>
+<rect x="390" y="572" width="112" height="48" rx="8" fill="#DFEAF4" stroke="#6B829C"/>
+<text x="446" y="592" text-anchor="middle" class="label">HQ-ASW1</text>
+<text x="446" y="608" text-anchor="middle" class="small">viosl2</text>
+<rect x="80" y="742" width="112" height="48" rx="8" fill="#EEF4F8" stroke="#6B829C"/>
+<text x="136" y="762" text-anchor="middle" class="label">HR-PC</text>
+<text x="136" y="778" text-anchor="middle" class="small">vpcs</text>
+<rect x="235" y="742" width="112" height="48" rx="8" fill="#EEF4F8" stroke="#6B829C"/>
+<text x="291" y="762" text-anchor="middle" class="label">FIN-PC</text>
+<text x="291" y="778" text-anchor="middle" class="small">vpcs</text>
+<rect x="390" y="742" width="112" height="48" rx="8" fill="#EEF4F8" stroke="#6B829C"/>
+<text x="446" y="762" text-anchor="middle" class="label">IT-PC</text>
+<text x="446" y="778" text-anchor="middle" class="small">vpcs</text>
+<rect x="545" y="742" width="112" height="48" rx="8" fill="#EEF4F8" stroke="#6B829C"/>
+<text x="601" y="762" text-anchor="middle" class="label">GUEST-PC</text>
+<text x="601" y="778" text-anchor="middle" class="small">vpcs</text>
+<rect x="700" y="742" width="112" height="48" rx="8" fill="#EEF4F8" stroke="#6B829C"/>
+<text x="756" y="762" text-anchor="middle" class="label">SERVER-PC</text>
+<text x="756" y="778" text-anchor="middle" class="small">vpcs</text>
+<rect x="960" y="422" width="112" height="48" rx="8" fill="#EEF4F8" stroke="#6B829C"/>
+<text x="1016" y="442" text-anchor="middle" class="label">BR-PC</text>
+<text x="1016" y="458" text-anchor="middle" class="small">vpcs</text>
+<rect x="1010" y="107" width="112" height="48" rx="8" fill="#EEF4F8" stroke="#6B829C"/>
+<text x="1066" y="127" text-anchor="middle" class="label">EXT-PC</text>
+<text x="1066" y="143" text-anchor="middle" class="small">vpcs</text>
+<text x="40" y="825" class="small">Solid lines represent virtual Ethernet links. The two peer links form LACP Port-channel1.</text>
+<text x="40" y="846" class="small">SERVER-PC and EXT-PC are ICMP test endpoints. Exact port assignments appear in Appendix A.</text>
+<text x="40" y="867" class="small"></text>
+</svg>
